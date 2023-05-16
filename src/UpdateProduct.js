@@ -2,39 +2,12 @@ import React from 'react';
 import { Button, TextField } from "@material-ui/core"
 
 
-class AddProduct extends React.Component {
+class UpdateProduct extends React.Component {
     constructor(props) {
         super(props);
         this.state = { item: { title: "",maker:"", color:"", userid:""}};
-        this.add = props.add;
-    }
-
-    ontitleChange = (e) => {
-        const thisItem = this.state.item;
-        thisItem.title = e.target.value;
-        this.setState({ item: thisItem });
-        console.log(thisItem);
-    }
-
-    onmakerChange = (e) => {
-        const thisItem = this.state.item;
-        thisItem.maker = e.target.value;
-        this.setState({ item: thisItem });
-        console.log(thisItem);
-    }
-
-    oncolorChange = (e) => {
-        const thisItem = this.state.item;
-        thisItem.color = e.target.value;
-        this.setState({ item: thisItem });
-        console.log(thisItem);
-    }
-
-    onuserIdChange = (e) => {
-        const thisItem = this.state.item;
-        thisItem.userId = e.target.value;
-        this.setState({ item: thisItem });
-        console.log(thisItem);
+        this.update = props.update;
+        this.search = props.search;
     }
 
     editEventHandler = (e) => {
@@ -43,10 +16,13 @@ class AddProduct extends React.Component {
         this.setState({item: thisItem});
     }
 
-    onButtonClick = () => {
-        this.add(this.state.item);
+    onButtonClick1 = () => {
+        this.search(this.state.item);
     }
 
+    onButtonClick2 = () => {
+        this.update(this.state.item);
+    }
 
     render() {
         return(
@@ -56,14 +32,15 @@ class AddProduct extends React.Component {
                         <td>title:</td>
                         <td>
                             <TextField
-                            onChange={this.ontitleChange}
+                            onChange={this.ontitleChange}  
                             value={this.state.item.title}
+                            
                             />
                         </td>
                         <td>
                             <Button
-                                onClick={this.onButtonClick}>
-                                제품 추가</Button>
+                                onClick={this.onButtonClick1}>
+                                제품 검색</Button>
                         </td>
                     </tr>
                     <tr>
@@ -97,6 +74,9 @@ class AddProduct extends React.Component {
                             />
                         </td>
                         <td>
+                                <Button
+                                onClick={this.onButtonClick2}>
+                                제품 수정</Button>
                         </td>
                     </tr>
                 </tbody>
@@ -107,4 +87,4 @@ class AddProduct extends React.Component {
     }
 }
 
-export default AddProduct;
+export default UpdateProduct;
