@@ -83,8 +83,8 @@ class App extends React.Component {
         <tbody>
           { this.state.items.map((item, index) => (
             <ProductTable 
+              key={item.id}
               item={item} 
-              key={item.id} 
               delete={this.delete}
               update={this.update} 
             />

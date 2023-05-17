@@ -43,9 +43,7 @@ class UpdateProduct extends React.Component {
     }
 
     onButtonClick2 = () => {
-        const thisItem = this.state.item;
-        this.update(thisItem);
-        this.setState({ item: thisItem });
+        this.update(this.state.item);
         
     }
 

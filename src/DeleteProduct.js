@@ -5,7 +5,7 @@ import { Button, TextField } from "@material-ui/core"
 class DeleteProduct extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { item: { title: "",maker:"", color:"", userid:""}};
+        this.state = { item: { title: "",maker:"", color:"", userId:""}};
         this.delete = props.delete;
     }
 

@@ -5,7 +5,7 @@ import { Button, TextField } from "@material-ui/core"
 class AddProduct extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { item: { title: "",maker:"", color:"", userid:""}};
+        this.state = { item: { title: "",maker:"", color:"", userId:""}};
         this.add = props.add;
     }
 
@@ -32,7 +32,7 @@ class AddProduct extends React.Component {
 
     onuserIdChange = (e) => {
         const thisItem = this.state.item;
-        thisItem.userid = e.target.value;
+        thisItem.userId = e.target.value;
         this.setState({ item: thisItem });
         console.log(thisItem);
     }
@@ -93,7 +93,7 @@ class AddProduct extends React.Component {
                         <td>
                             <TextField
                             onChange={this.onuserIdChange}  
-                            value={this.state.item.userid}
+                            value={this.state.item.userId}
                             />
                         </td>
                         <td>

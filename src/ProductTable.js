@@ -22,7 +22,7 @@ class ProductTable extends React.Component {
                   <td>{item.title}</td>
                   <td>{item.maker}</td>
                   <td>{item.color}</td>
-                  <td>{item.userid}</td>
+                  <td>{item.userId}</td>
                   <td><Button
                     onClick={this.deleteEventHandler}>
                     delete</Button>
