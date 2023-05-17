@@ -35,6 +35,7 @@ class Product extends React.Component {
 
     checkboxEventHandler = (e) => {
         const thisItem = this.state.item;
+        thisItem.done = !thisItem.done;
         this.setState({item: thisItem});
         this.update(this.state.item);
     }
@@ -43,7 +44,7 @@ class Product extends React.Component {
         const item = this.state.item;
         return(
             <ListItem>
-                <Checkbox
+                <Checkbox checked={item.done} 
                     onChange={this.checkboxEventHandler} />
                 <ListItemText>
                     <InputBase 

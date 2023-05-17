@@ -1,7 +1,7 @@
 import React from "react";
 import { TextField, Paper, Button, Grid } from "@material-ui/core";
 
-class AddProduct extends React.Component {
+class TopProduct extends React.Component {
     constructor(props) {
         super(props);
         this.state = { item: { title: "" } };
@@ -55,4 +55,4 @@ class AddProduct extends React.Component {
     }
 }
 
-export default AddProduct;
+export default TopProduct;

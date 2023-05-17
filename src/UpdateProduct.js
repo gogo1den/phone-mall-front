@@ -10,14 +10,36 @@ class UpdateProduct extends React.Component {
         this.search = props.search;
     }
 
-    editEventHandler = (e) => {
+    ontitleChange = (e) => {
         const thisItem = this.state.item;
         thisItem.title = e.target.value;
-        this.setState({item: thisItem});
+        this.setState({ item: thisItem });
+        console.log(thisItem);
+    }
+
+    onmakerChange = (e) => {
+        const thisItem = this.state.item;
+        thisItem.maker = e.target.value;
+        this.setState({ item: thisItem });
+        console.log(thisItem);
+    }
+
+    oncolorChange = (e) => {
+        const thisItem = this.state.item;
+        thisItem.color = e.target.value;
+        this.setState({ item: thisItem });
+        console.log(thisItem);
+    }
+
+    onuserIdChange = (e) => {
+        const thisItem = this.state.item;
+        thisItem.userId = e.target.value;
+        this.setState({ item: thisItem });
+        console.log(thisItem);
     }
 
     onButtonClick1 = () => {
-        this.search(this.state.item);
+        this.search(this.state.item.title);
     }
 
     onButtonClick2 = () => {
@@ -25,6 +47,7 @@ class UpdateProduct extends React.Component {
     }
 
     render() {
+        const item = this.state.item;
         return(
             <table>
                 <tbody>
@@ -34,7 +57,10 @@ class UpdateProduct extends React.Component {
                             <TextField
                             onChange={this.ontitleChange}  
                             value={this.state.item.title}
-                            
+                            type="text" 
+                            id={item.id}
+                            name={item.id}
+                            multiline={true}
                             />
                         </td>
                         <td>
