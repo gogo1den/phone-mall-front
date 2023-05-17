@@ -112,7 +112,7 @@ class App extends React.Component {
             <UpdateProduct update={this.update} search={this.search}/>
           </div>
           <div>
-            <DeleteProduct delete={this.delete} />
+            <DeleteProduct delete={this.delete}  />
           </div>
         </Container>
       </div>
