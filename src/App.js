@@ -8,6 +8,7 @@ import ProductTable from './ProductTable';
 import styles from './table.css'
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
+import DeleteProduct from './DeleteProduct';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class App extends React.Component {
   }
 
   search = (item) => {
-    call("/product", "GET", item).then((response) => 
+    call("/product/search", "GET", item).then((response) => 
       this.setState({items: response.data})
     );
   }
@@ -106,6 +107,9 @@ class App extends React.Component {
           </div>
           <div>
             <UpdateProduct update={this.update} search={this.search}/>
+          </div>
+          <div>
+            <DeleteProduct delete={this.delete} />
           </div>
         </Container>
       </div>

@@ -39,7 +39,7 @@ class UpdateProduct extends React.Component {
     }
 
     onButtonClick1 = () => {
-        this.search(this.state.item.title);
+        this.search(this.state.item);
     }
 
     onButtonClick2 = () => {
@@ -96,7 +96,7 @@ class UpdateProduct extends React.Component {
                         <td>
                             <TextField
                             onChange={this.onuserIdChange}  
-                            value={this.state.item.userId}
+                            value={this.state.item.userid}
                             />
                         </td>
                         <td>
