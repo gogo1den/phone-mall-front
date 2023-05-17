@@ -74,6 +74,9 @@ class App extends React.Component {
           <tr>
             <th>id</th>
             <th>title</th>
+            <th>maker</th>
+            <th>color</th>
+            <th>userId</th>
             <th>삭제</th>
           </tr>        
         </thead>

@@ -32,7 +32,7 @@ class AddProduct extends React.Component {
 
     onuserIdChange = (e) => {
         const thisItem = this.state.item;
-        thisItem.userId = e.target.value;
+        thisItem.userid = e.target.value;
         this.setState({ item: thisItem });
         console.log(thisItem);
     }
@@ -56,7 +56,7 @@ class AddProduct extends React.Component {
                         <td>title:</td>
                         <td>
                             <TextField
-                            onChange={this.ontitleChange}
+                            onChange={this.editEventHandler}
                             value={this.state.item.title}
                             />
                         </td>
@@ -93,7 +93,7 @@ class AddProduct extends React.Component {
                         <td>
                             <TextField
                             onChange={this.onuserIdChange}  
-                            value={this.state.item.userId}
+                            value={this.state.item.userid}
                             />
                         </td>
                         <td>

@@ -33,7 +33,7 @@ class UpdateProduct extends React.Component {
 
     onuserIdChange = (e) => {
         const thisItem = this.state.item;
-        thisItem.userId = e.target.value;
+        thisItem.userid = e.target.value;
         this.setState({ item: thisItem });
         console.log(thisItem);
     }
@@ -43,7 +43,10 @@ class UpdateProduct extends React.Component {
     }
 
     onButtonClick2 = () => {
-        this.update(this.state.item);
+        const thisItem = this.state.item;
+        this.update(thisItem);
+        this.setState({ item: thisItem });
+        
     }
 
     render() {
@@ -96,7 +99,7 @@ class UpdateProduct extends React.Component {
                         <td>
                             <TextField
                             onChange={this.onuserIdChange}  
-                            value={this.state.item.userId}
+                            value={this.state.item.userid}
                             />
                         </td>
                         <td>
