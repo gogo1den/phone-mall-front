@@ -96,7 +96,7 @@ class UpdateProduct extends React.Component {
                         <td>
                             <TextField
                             onChange={this.onuserIdChange}  
-                            value={this.state.item.userid}
+                            value={this.state.item.userId}
                             />
                         </td>
                         <td>

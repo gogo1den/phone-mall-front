@@ -3,7 +3,7 @@ import './App.css';
 import Product from './Product';
 import { Paper, List, Container } from "@material-ui/core";
 import TopProduct from "./TopProduct.js"
-import { call } from "./service/ApiService";
+import { call, searchByTitle } from "./service/ApiService";
 import ProductTable from './ProductTable';
 import styles from './table.css'
 import AddProduct from './AddProduct';
@@ -44,7 +44,7 @@ class App extends React.Component {
   }
 
   search = (item) => {
-    call("/product/search", "GET", item).then((response) => 
+    searchByTitle(item.title).then((response) => 
       this.setState({items: response.data})
     );
   }
