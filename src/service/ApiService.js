@@ -8,7 +8,7 @@ export function call(api, method, request) {
     url: API_BASE_URL + api,
     method: method,
   };
-  if (method !== "GET" && request) {
+  if (request) {
     options.body = JSON.stringify(request);
   }
 

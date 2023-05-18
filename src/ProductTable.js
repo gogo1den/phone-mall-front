@@ -13,6 +13,11 @@ class ProductTable extends React.Component {
         this.delete(this.state.item);
     }
 
+    handleUpdateComplete = () => {
+        // 데이터를 다시 불러와서 상태를 업데이트합니다.
+        this.loadData();
+      }
+
 
     render() {
         const item = this.state.item;
@@ -27,7 +32,7 @@ class ProductTable extends React.Component {
                     onClick={this.deleteEventHandler}>
                     delete</Button>
                   </td>
-            </tr>
+                  </tr>
 
         );
     }

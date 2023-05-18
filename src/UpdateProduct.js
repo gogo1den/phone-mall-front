@@ -8,6 +8,7 @@ class UpdateProduct extends React.Component {
         this.state = { item: { title: "",maker:"", color:"", userId:""}};
         this.update = props.update;
         this.search = props.search;
+        this.componentDidMount = props.componentDidMount
     }
 
     ontitleChange = (e) => {
@@ -43,9 +44,11 @@ class UpdateProduct extends React.Component {
     }
 
     onButtonClick2 = () => {
-        this.update(this.state.item);
-        
+        const thisItem = this.state.item;
+        this.update(thisItem)
+        window.location.reload();
     }
+
 
     render() {
         const item = this.state.item;
@@ -98,6 +101,9 @@ class UpdateProduct extends React.Component {
                             <TextField
                             onChange={this.onuserIdChange}  
                             value={this.state.item.userId}
+                            type="text" 
+                            id={item.id}
+                            name={item.id}
                             />
                         </td>
                         <td>
