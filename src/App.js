@@ -5,7 +5,6 @@ import { Paper, List, Container } from "@material-ui/core";
 import TopProduct from "./TopProduct.js"
 import { call, searchByTitle } from "./service/ApiService";
 import ProductTable from './ProductTable';
-import styles from './table.css'
 import AddProduct from './AddProduct';
 import UpdateProduct from './UpdateProduct';
 import DeleteProduct from './DeleteProduct';
@@ -68,7 +67,7 @@ class App extends React.Component {
     
     var todoRows = this.state.items.length > 0 && (
       <div>
-    <table className={styles.prodTable}>
+    <table  border="1">
       <caption>Product item table</caption>
         <thead>
           <tr>

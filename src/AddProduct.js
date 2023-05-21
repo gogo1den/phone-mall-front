@@ -50,7 +50,8 @@ class AddProduct extends React.Component {
 
     render() {
         return(
-            <table>
+            <table border="1" solid red>
+                <caption>제품 추가</caption>
                 <tbody>
                     <tr>
                         <td>title:</td>

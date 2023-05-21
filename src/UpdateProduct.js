@@ -6,9 +6,8 @@ class UpdateProduct extends React.Component {
     constructor(props) {
         super(props);
         this.state = { item: { title: "",maker:"", color:"", userId:""}};
-        this.update = props.update;
         this.search = props.search;
-        this.componentDidMount = props.componentDidMount
+        this.update = props.update;
     }
 
     ontitleChange = (e) => {
@@ -39,6 +38,12 @@ class UpdateProduct extends React.Component {
         console.log(thisItem);
     }
 
+    editEventHandler = (e) => {
+        const thisItem = this.state.item;
+        thisItem.title = e.target.value;
+        this.setState({item: thisItem});
+    }
+
     onButtonClick1 = () => {
         this.search(this.state.item);
     }
@@ -51,20 +56,16 @@ class UpdateProduct extends React.Component {
 
 
     render() {
-        const item = this.state.item;
         return(
-            <table>
+            <table border="1" solid red>
+                <caption>제품 검색</caption>
                 <tbody>
                     <tr>
                         <td>title:</td>
                         <td>
                             <TextField
-                            onChange={this.ontitleChange}  
+                            onChange={this.editEventHandler}
                             value={this.state.item.title}
-                            type="text" 
-                            id={item.id}
-                            name={item.id}
-                            multiline={true}
                             />
                         </td>
                         <td>
@@ -101,13 +102,10 @@ class UpdateProduct extends React.Component {
                             <TextField
                             onChange={this.onuserIdChange}  
                             value={this.state.item.userId}
-                            type="text" 
-                            id={item.id}
-                            name={item.id}
                             />
                         </td>
                         <td>
-                                <Button
+                            <Button
                                 onClick={this.onButtonClick2}>
                                 제품 수정</Button>
                         </td>

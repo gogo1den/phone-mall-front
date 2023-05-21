@@ -25,7 +25,8 @@ class DeleteProduct extends React.Component {
     render() {
         const item = this.state.item;
         return(
-            <table>
+            <table border="1" solid red>
+                <caption>제품 삭제</caption>
                 <tbody>
                     <tr>
                         <td>title:</td>
